@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupFormInput = new GroupBox();
-            label1 = new Label();
+            labelNamaKategori = new Label();
             txtNamaKategori = new TextBox();
             groupFormInput.SuspendLayout();
             SuspendLayout();
@@ -37,7 +37,7 @@
             // groupFormInput
             // 
             groupFormInput.Controls.Add(txtNamaKategori);
-            groupFormInput.Controls.Add(label1);
+            groupFormInput.Controls.Add(labelNamaKategori);
             groupFormInput.Location = new Point(12, 12);
             groupFormInput.Name = "groupFormInput";
             groupFormInput.Size = new Size(498, 86);
@@ -45,14 +45,14 @@
             groupFormInput.TabStop = false;
             groupFormInput.Text = "input form";
             // 
-            // label1
+            // labelNamaKategori
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(24, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(86, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nama Kategori";
+            labelNamaKategori.AutoSize = true;
+            labelNamaKategori.Location = new Point(24, 33);
+            labelNamaKategori.Name = "labelNamaKategori";
+            labelNamaKategori.Size = new Size(86, 15);
+            labelNamaKategori.TabIndex = 0;
+            labelNamaKategori.Text = "Nama Kategori";
             // 
             // txtNamaKategori
             // 
@@ -78,7 +78,7 @@
         #endregion
 
         private GroupBox groupFormInput;
-        private Label label1;
+        private Label labelNamaKategori;
         private TextBox txtNamaKategori;
     }
 }
