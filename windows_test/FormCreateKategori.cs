@@ -73,5 +73,10 @@ namespace windows_test
         {
 
         }
+
+        private void txtCreateNamaKategori_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
