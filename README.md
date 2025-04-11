@@ -1,16 +1,34 @@
-# C# DASHBOARD UMKM
+# C# Dashboard UMKM (BETA)
 
-pengembangan for admin aplikasi https://github.com/sukmaajidigital/dashboardumkm
+Aplikasi dashboard berbasis C# untuk pengelolaan data UMKM, khusus dikembangkan untuk admin aplikasi utama: dashboardumkm.
 
-## REQUIRE FOR RUNNING
+## Persyaratan Sistem
 
-- MySQL or Mariadb DBMS
-- `"DotNetEnv" Version="3.1.1"`
-- `"MySql.Data" Version="9.2.0"`
+Sebelum menjalankan aplikasi, pastikan Anda telah menginstal dependensi berikut:
 
-## sample data
+- Database: MySQL atau MariaDB
 
-![alt text](image.png)
+- NuGet Packages:
+
+* DotNetEnv versi 3.1.1
+
+* MySql.Data versi 9.2.0
+
+## Konfigurasi Database
+
+Duplikat file `.env.example` menjadi `.env`.
+
+Ubah isi file `.env` sesuai konfigurasi database Anda
+
+# 🖼️ Tampilan Antarmuka (UI Preview)
+
+## Kategori Data
+
+![alt text](image-6.png)
+
+## Customer Data
+
+![alt text](image-5.png)
 
 ## sample create data
 
