@@ -41,10 +41,13 @@ namespace windows_test
                     }
                     kategoriTable.Columns["No"].SetOrdinal(0);
 
+                    
+
                     tableDataKategori.DataSource = kategoriTable;
                     tableDataKategori.Columns["id"].Visible = false; // Sembunyikan kolom id
 
-
+                    tableDataKategori.Columns["id"].HeaderText = "id";
+                    tableDataKategori.Columns["nama_kategori"].HeaderText = "Nama";
                 }
                 catch (Exception ex)
                 {
