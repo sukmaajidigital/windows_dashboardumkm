@@ -19,6 +19,7 @@ Sebelum menjalankan aplikasi, pastikan Anda telah menginstal dependensi berikut:
 Duplikat file `.env.example` menjadi `.env`.
 
 Ubah isi file `.env` sesuai konfigurasi database Anda
+![alt text](image-7.png)
 
 # 🖼️ Tampilan Antarmuka (UI Preview)
 
