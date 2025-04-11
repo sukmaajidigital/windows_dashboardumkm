@@ -13,6 +13,12 @@ namespace windows_test
             LoadDataKategori();
         }
         private DataTable kategoriTable;
+        private void LoadUserControl(UserControl control)
+        {
+            panelMain.Controls.Clear();
+            control.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(control);
+        }
         private void LoadDataKategori()
         {
             string connectionString = DatabaseHelper.GetConnectionString();
@@ -35,8 +41,8 @@ namespace windows_test
                     }
                     kategoriTable.Columns["No"].SetOrdinal(0);
 
-                    dataGridView1.DataSource = kategoriTable;
-                    dataGridView1.Columns["id"].Visible = false; // Sembunyikan kolom id
+                    tableDataKategori.DataSource = kategoriTable;
+                    tableDataKategori.Columns["id"].Visible = false; // Sembunyikan kolom id
 
 
                 }
@@ -45,19 +51,19 @@ namespace windows_test
                     MessageBox.Show("Gagal load data: " + ex.Message);
                 }
             }
-            if (!dataGridView1.Columns.Contains("actionColumn"))
+            if (!tableDataKategori.Columns.Contains("actionColumn"))
             {
                 DataGridViewTextBoxColumn actionColumn = new DataGridViewTextBoxColumn();
                 actionColumn.Name = "actionColumn";
                 actionColumn.HeaderText = "Aksi";
                 actionColumn.ReadOnly = true;
                 actionColumn.Width = 120; // Sesuaikan
-                dataGridView1.Columns.Add(actionColumn);
+                tableDataKategori.Columns.Add(actionColumn);
             }
         }
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["actionColumn"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == tableDataKategori.Columns["actionColumn"].Index && e.RowIndex >= 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -79,22 +85,22 @@ namespace windows_test
                     buttonWidth, buttonHeight
                 );
 
-                ButtonRenderer.DrawButton(e.Graphics, editButtonRect, "Edit", dataGridView1.Font, false, PushButtonState.Default);
-                ButtonRenderer.DrawButton(e.Graphics, deleteButtonRect, "Delete", dataGridView1.Font, false, PushButtonState.Default);
+                ButtonRenderer.DrawButton(e.Graphics, editButtonRect, "Edit", tableDataKategori.Font, false, PushButtonState.Default);
+                ButtonRenderer.DrawButton(e.Graphics, deleteButtonRect, "Delete", tableDataKategori.Font, false, PushButtonState.Default);
 
                 e.Handled = true;
             }
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "actionColumn")
+            if (e.RowIndex >= 0 && tableDataKategori.Columns[e.ColumnIndex].Name == "actionColumn")
             {
-                int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
-                string namaKategori = dataGridView1.Rows[e.RowIndex].Cells["nama_kategori"].Value.ToString();
+                int id = Convert.ToInt32(tableDataKategori.Rows[e.RowIndex].Cells["id"].Value);
+                string namaKategori = tableDataKategori.Rows[e.RowIndex].Cells["nama_kategori"].Value.ToString();
 
                 // Hitung posisi klik relatif
-                var cellRect = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-                int clickX = dataGridView1.PointToClient(Cursor.Position).X - cellRect.X;
+                var cellRect = tableDataKategori.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+                int clickX = tableDataKategori.PointToClient(Cursor.Position).X - cellRect.X;
 
                 if (clickX < 60) // Klik Edit
                 {
@@ -155,8 +161,18 @@ namespace windows_test
             {
                 DataView dv = kategoriTable.DefaultView;
                 dv.RowFilter = $"nama_kategori LIKE '%{txtSearchKategori.Text}%'"; // filter berdasarkan isi textbox
-                dataGridView1.DataSource = dv;
+                tableDataKategori.DataSource = dv;
             }
+        }
+
+        private void btnSidebarKategori_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new KategoriControl());
+        }
+
+        private void btnSidebarCustomer_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new CustomerControl());
         }
     }
 }

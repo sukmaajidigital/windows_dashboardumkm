@@ -29,25 +29,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            txtSearchKategori = new TextBox();
             groupFormInput = new GroupBox();
             btnCreateKategori = new Button();
-            dataGridView1 = new DataGridView();
-            txtSearchKategori = new TextBox();
+            tableDataKategori = new DataGridView();
+            panelMain = new Panel();
             groupFormInput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tableDataKategori).BeginInit();
+            panelMain.SuspendLayout();
             SuspendLayout();
+            // 
+            // txtSearchKategori
+            // 
+            txtSearchKategori.Location = new Point(18, 104);
+            txtSearchKategori.Name = "txtSearchKategori";
+            txtSearchKategori.PlaceholderText = "Cari kategori... ";
+            txtSearchKategori.Size = new Size(300, 23);
+            txtSearchKategori.TabIndex = 0;
+            txtSearchKategori.TextChanged += txtSearchKategori_TextChanged;
             // 
             // groupFormInput
             // 
             groupFormInput.BackColor = Color.WhiteSmoke;
             groupFormInput.Controls.Add(btnCreateKategori);
             groupFormInput.Font = new Font("Segoe UI", 10F);
-            groupFormInput.Location = new Point(12, 12);
+            groupFormInput.Location = new Point(18, 12);
             groupFormInput.Name = "groupFormInput";
-            groupFormInput.Size = new Size(740, 86);
+            groupFormInput.Size = new Size(755, 86);
             groupFormInput.TabIndex = 0;
             groupFormInput.TabStop = false;
             groupFormInput.Text = "Tambah Kategori";
@@ -67,52 +78,52 @@
             btnCreateKategori.UseVisualStyleBackColor = false;
             btnCreateKategori.Click += btnCreateKategori_Click;
             // 
-            // dataGridView1
+            // tableDataKategori
             // 
-            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.LightSteelBlue;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(12, 133);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 35;
-            dataGridView1.Size = new Size(1142, 492);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            dataGridView1.CellPainting += dataGridView1_CellPainting;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            tableDataKategori.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.BackColor = Color.WhiteSmoke;
+            tableDataKategori.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            tableDataKategori.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableDataKategori.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tableDataKategori.BackgroundColor = Color.White;
+            tableDataKategori.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.LightSteelBlue;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            tableDataKategori.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            tableDataKategori.DefaultCellStyle = dataGridViewCellStyle6;
+            tableDataKategori.EnableHeadersVisualStyles = false;
+            tableDataKategori.Location = new Point(18, 133);
+            tableDataKategori.Name = "tableDataKategori";
+            tableDataKategori.RowHeadersVisible = false;
+            tableDataKategori.RowTemplate.Height = 35;
+            tableDataKategori.Size = new Size(1114, 483);
+            tableDataKategori.TabIndex = 0;
+            tableDataKategori.CellClick += dataGridView1_CellClick;
+            tableDataKategori.CellContentClick += dataGridView1_CellContentClick;
+            tableDataKategori.CellPainting += dataGridView1_CellPainting;
             // 
-            // txtSearchKategori
+            // panelMain
             // 
-            txtSearchKategori.Location = new Point(12, 104);
-            txtSearchKategori.Name = "txtSearchKategori";
-            txtSearchKategori.PlaceholderText = "Cari kategori... ";
-            txtSearchKategori.Size = new Size(300, 23);
-            txtSearchKategori.TabIndex = 0;
-            txtSearchKategori.TextChanged += txtSearchKategori_TextChanged;
+            panelMain.Controls.Add(tableDataKategori);
+            panelMain.Controls.Add(groupFormInput);
+            panelMain.Controls.Add(txtSearchKategori);
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(0, 0);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(1166, 656);
+            panelMain.TabIndex = 3;
             // 
             // DataKategori
             // 
@@ -120,24 +131,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1166, 656);
-            Controls.Add(txtSearchKategori);
-            Controls.Add(dataGridView1);
-            Controls.Add(groupFormInput);
+            Controls.Add(panelMain);
             Name = "DataKategori";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Data Kategori";
             groupFormInput.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tableDataKategori).EndInit();
+            panelMain.ResumeLayout(false);
+            panelMain.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
-
 
         #endregion
 
-        private GroupBox groupFormInput;
-        private DataGridView dataGridView1;
-        private Button btnCreateKategori;
         private TextBox txtSearchKategori;
+        private GroupBox groupFormInput;
+        private Button btnCreateKategori;
+        private DataGridView tableDataKategori;
+        private Panel panelMain;
     }
 }
